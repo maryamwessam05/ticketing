@@ -5,11 +5,84 @@
     font-family: "Outfit";
 }
 
-body{
+#root{
     display: flex;
 width: 100%;
 padding-top: 50px;
 flex-direction: column;
 align-items: center;
 gap: 100px;
+overflow-x: hidden;
+}
+
+.hero{
+    display: flex;
+padding: 0 69px;
+justify-content: space-between;
+align-items: center;
+align-self: stretch;
+position: relative;
+width: 100%;
+}
+
+.herotxt{
+    display: flex;
+width: 58%;
+flex-direction: column;
+align-items: flex-start;
+gap: 24px;
+position: relative;
+}
+
+.herolabel{
+    color: #111827;
+font-family: Outfit;
+font-size: 102.369px;
+font-style: normal;
+font-weight: 400;
+line-height: 102.369px; /* 100% */
+letter-spacing: -0.711px;
+}
+
+.herotxt span{
+    color: #2F91F8;
+font-family: Outfit;
+font-size: 102.369px;
+font-style: normal;
+font-weight: 600;
+line-height: 102.369px;
+letter-spacing: -0.711px;
+}
+
+.herotxt p{
+    color: #4B5563;
+font-family: Outfit;
+font-size: 23.865px;
+font-style: normal;
+font-weight: 400;
+line-height: 33.41px; /* 140% */
+letter-spacing: -0.597px;
+}
+.herobtns{
+    display: flex;
+align-items: flex-start;
+gap: 16px;
+}
+.heroimg{
+    position: relative;
+    scale: 0.7;
+    width: 40%;
+}
+
+.ill{
+   position: absolute;
+        left: -165px;
+    z-index: -1;
+    top: -88px;
+    scale: 1.2;
+}
+
+.rec{
+    position: absolute;
+    
 }
