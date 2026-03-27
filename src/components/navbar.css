@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    display: flex;
+padding: 22px 28px;
+justify-content: center;
+align-items: center;
+gap: 91px;
+width: fit-content;
+border-radius: 390px;
+background: #FFF;
+box-shadow: 0 2px 17.8px 0 rgba(0, 0, 0, 0.14);
+}
+
+ul{
+    display: flex;
+height: 24px;
+align-items: center;
+gap: 123px;
+}
+
+.navactions{
+    display: flex;
+align-items: center;
+gap: 16px;
+}
+
+.signup{
+    display: flex;
+padding: 9px 24px;
+justify-content: center;
+align-items: center;
+border-radius: 40px;
+background: #2F91F8;
+cursor: pointer;
+transition: all 300ms ease;
+color: #FFF;
+text-align: center;
+font-family: Outfit;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 150% */
+letter-spacing: -0.5px;
+border: none;
+}
+
+.signup:hover{
+    transform: translateY(-3px);
+box-shadow: 0 4px 0 0 #113861;
+}
+
+.lang{
+    display: flex;
+
+padding: 9px 16px;
+justify-content: center;
+align-items: center;
+gap: 8px;
+color: #374151;
+text-align: center;
+font-family: Outfit;
+font-size: 21.724px;
+font-style: normal;
+font-weight: 400;
+line-height: 31.034px; /* 142.857% */
+letter-spacing: -0.776px;
+}
