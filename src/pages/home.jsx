@@ -13,6 +13,13 @@ import abtimg3 from "../assets/abtimg03.png"
 import abtimg4 from "../assets/abtimg04.png"
 import click from "../assets/Vector.svg"
 import BlurText from "../componentblur/BlurText";
+import Header from '../components/header';
+import Category from '../components/category';
+import cat1 from "../assets/categimg01.png"
+import cat2 from "../assets/categimg02.png"
+import cat3 from "../assets/categimg03.png"
+import cat4 from "../assets/categimg04.png"
+import blackarrow from "../assets/arrowblack.svg"
 
 
 const Home = () => {
@@ -127,6 +134,29 @@ const Home = () => {
                 <img src={click} className={`click ${showShapes ? "show-shape" : ""}`} alt="" />
             </div>
         </div>
+
+        <section className="section3" id='cat'>
+            <Header style="headerblack" title="Browse by Category" subheading="Find events that match your vibe" />
+
+            <div className="categories">
+                <Category style="catselected" type="Music" sub="240+ events" image={cat1} />
+                <Category style="cat" type="Art" sub="240+ events" image={cat2} contstyle="contpad" />
+                <Category style="cat" type="Tech" sub="240+ events" image={cat3} />
+                <Category style="cat" type="Food" sub="240+ events" image={cat4}  contstyle="contpad"/>
+
+
+            </div>
+        </section>
+
+        <section className="section3" id='cat'>
+            <div className="sec3head">
+
+            <Header style="headerblack" title="Trending Events" subheading="Don't miss out on these hot tickets" />
+            <Bluebtn style="green" txt="View All" icon={blackarrow} />
+            </div>
+
+            
+        </section>
         </>
      );
 }

@@ -7,11 +7,12 @@
 nav{
     display: flex;
 padding: 22px 28px;
-justify-content: center;
+justify-content: space-between;
 align-items: center;
-gap: 91px;
+gap: 35px;
 width: fit-content;
 border-radius: 390px;
+width: 92%;
 background: #FFF;
 box-shadow: 0 2px 17.8px 0 rgba(0, 0, 0, 0.14);
 }
@@ -20,7 +21,9 @@ ul{
     display: flex;
 height: 24px;
 align-items: center;
-gap: 123px;
+width: 50%;
+justify-content: space-between;
+
 }
 
 .navactions{
