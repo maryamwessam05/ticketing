@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.testimonial{
+    display: flex;
+width:25%;
+padding: 30px 20px;
+gap: 50px;
+flex-direction: column;
+justify-content: space-between;
+align-items: flex-start;
+border-radius: 21.381px;
+border: 1px solid #FFF;
+background: rgba(255, 255, 255, 0.30);
+box-shadow: 0 1px 13.9px 0 rgba(0, 0, 0, 0.14);
+backdrop-filter: blur(5px);
+transition: all 300ms ease;
+}
+.testimonial p{
+    color: var(--black, #373737);
+
+font-family: Montserrat;
+font-size: 17.308px;
+font-style: normal;
+font-weight: 400;
+line-height: 130%; /* 22.5px */
+}
+
+.name{
+  display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+gap: 2.036px;
+}
+
+.name h5{
+    color: var(--black, #373737);
+font-family: Montserrat;
+font-size: 15.568px;
+font-style: normal;
+font-weight: 600;
+line-height: 18.162px; /* 116.667% */
+}
+
+.name span{
+    color: var(--black, #373737);
+font-family: Montserrat;
+font-size: 15.568px;
+font-style: normal;
+font-weight: 400;
+line-height: 18.162px; /* 116.667% */
+}
+
+.user{
+    display: flex;
+align-items: center;
+gap: 15.272px;
+align-self: stretch;
+}
+
+.testimonial:hover{
+    scale: 1.1;
+}

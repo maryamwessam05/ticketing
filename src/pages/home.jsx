@@ -33,8 +33,12 @@ import calen from "../assets/featevent01.svg"
 import loc2 from "../assets/featevent02.svg"
 import people from "../assets/featevent03.svg"
 import featimg from "../assets/featimg.png"
-import featborder from "../assets/framegreen.svg"
 import SquareDraw from '../components/squaredraw';
+import testi from "../assets/testi.png"
+import Testimonial from '../components/testimonial';
+import peop1 from "../assets/people01.png"
+import peop2 from "../assets/people02.png"
+import peop3 from "../assets/people03.png"
 
 
 
@@ -220,6 +224,22 @@ const Home = () => {
             <SquareDraw />
             </div>
            </div>
+        </section>
+
+        <section className="section7">
+            <div className="headingt">
+                <img className='testi' src={testi} alt="" />  
+                <Header style="headerblack" title="What People Say" subheading="Hear from our happy event-goers" />
+            </div>
+            <div className="testiwrap">
+                <div className="testimonials">
+                    <Testimonial say="EventHub made finding and booking concerts so easy! The interface is beautiful and the booking process is seamless." peop={peop1} name="Omar Kareem" loc="Cairo" />
+                    <Testimonial say="Amazing platform! Found the perfect concert and the booking process was so smooth. Highly recommended!" peop={peop2} name="Sarah Ahmed" loc="Cairo" />
+                    <Testimonial say="The best event platform I've used. Great selection, fair prices, and excellent customer service. Five stars!" peop={peop3} name="Lina Ahmed" loc="Cairo" />
+
+                </div>
+
+            </div>
         </section>
         </>
      );
