@@ -24,6 +24,7 @@ import Event from '../components/event';
 import eventimg1 from "../assets/trendimg01.png"
 import eventimg2 from "../assets/trendimg02.png"
 import eventimg3 from "../assets/trendimg03.png"
+import DashedLine from '../components/dashed';
 
 
 const Home = () => {
@@ -166,6 +167,16 @@ const Home = () => {
             </div>
 
             
+        </section>
+
+        <section className='section5'>
+            <Header style="headerblack" title="Why Choose EventHub?" subheading="We make discovering and booking events simple, safe, and enjoyable" />
+            <div className="wrapper">
+                <div className="linedash">
+                <DashedLine />  
+
+                </div>
+            </div>
         </section>
         </>
      );

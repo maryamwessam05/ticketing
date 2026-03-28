@@ -333,3 +333,22 @@ flex-direction: column;
 align-items: center;
 gap: 40px;
 }
+
+.section5{
+    display: flex;
+flex-direction: column;
+align-items: center;
+gap: 45px;
+align-self: stretch;
+position: relative;
+}
+
+.wrapper{
+    width: 90%;
+    display: flex;
+    position: relative;
+}
+
+.linedash{
+    position: absolute;
+}
