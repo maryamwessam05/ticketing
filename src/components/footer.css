@@ -1,0 +1,44 @@
+.footbg{
+    position: absolute;
+    top: -78px;
+    z-index: -99;
+  left: 0;
+    width: 100%;
+}
+
+footer{
+    position: relative;
+    width: 100%;
+    display: flex;
+    z-index: 9999;
+padding: 95px 0;
+padding-bottom: 77px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background: #C8F22B;
+}
+
+.footercont{
+    display: flex;
+justify-content: space-between;
+align-items: flex-start;
+width: 90%;
+}
+
+.col1{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 30.275px;
+}
+
+.col1 h1{
+    color: #111827;
+font-family: Outfit;
+font-size: 20.183px;
+font-style: normal;
+font-weight: 700;
+line-height: 30.275px; /* 150% */
+letter-spacing: -0.631px;
+}

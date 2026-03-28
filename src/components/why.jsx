@@ -7,8 +7,8 @@ const Why = (props) => {
             <div className={props.style}>
                 <img src={props.dot} alt="" />
                 <div className={props.textcon}>
-                    <h1 className='whytit'>{props.title}</h1>
-                    <p className='whyp'>{props.desc}</p>
+                    <h1 className={props.textstyle}>{props.title}</h1>
+                    <p className={props.pstyle}>{props.desc}</p>
                 </div>
             </div>
         </>

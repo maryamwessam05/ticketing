@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import "./home.css"
 import Navbar from '../components/navbar';
 import Bluebtn from '../components/bluebtn';
@@ -26,8 +26,6 @@ import eventimg2 from "../assets/trendimg02.png"
 import eventimg3 from "../assets/trendimg03.png"
 import DashedLine from '../components/dashed';
 import Why from '../components/why';
-import greendot from "../assets/green.svg"
-import bluedot from "../assets/blue.svg"
 import Chips from '../components/chips';
 import calen from "../assets/featevent01.svg"
 import loc2 from "../assets/featevent02.svg"
@@ -51,9 +49,13 @@ import footbg from "../assets/footerbg.svg"
 import logo from "../assets/logo.svg"
 import Footercol from '../components/footercol';
 import smicons from "../assets/smicons.svg"
+import Folder from '../componentfolder/Folder';
+import Preloader from './preloader';
+import Footer from '../components/footer';
 
 
 const Home = () => {
+    
     const [count, setCount] = useState(0);
 
       const [aboutStarted, setAboutStarted] = useState(false);
@@ -62,7 +64,7 @@ const Home = () => {
     const [showImg3, setShowImg3] = useState(false);
     const [showImg4, setShowImg4] = useState(false);
     const [showShapes, setShowShapes] = useState(false);
-
+    
     const handleAboutEnter = () => {
         if (aboutStarted) return;
 
@@ -181,17 +183,32 @@ const Home = () => {
     });
     setCount(0);
     };
+      const [loading, setLoading] = useState(true);
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+        setLoading(false);
+        }, 2000); // duration of preloader
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (loading) {
+        return <Preloader />;
+    }
 
     return ( 
         <>
+        <main>
+
         <Navbar />
 
         <section className="hero">
             <div className="herotxt">
-  
-                      <DecryptedText
-                       text="Your Next
+            <div className="dectext">
+
+                <DecryptedText
+                text="Your Next
                             Adventure
                             Awaits"
                         animateOn="view"
@@ -199,8 +216,9 @@ const Home = () => {
                         sequential
                     className="herolabel"
 
-                        useOriginalCharsOnly={false}
-                        />
+                useOriginalCharsOnly={false}
+                />
+            </div>
                     
                 <p>Book tickets to concerts, festivals, workshops, and cultural events. Join thousands of happy attendees!</p>
                 <div className="herobtns">
@@ -297,9 +315,41 @@ const Home = () => {
                 <div className="linedash">
                 <DashedLine />  
                 </div>
-                    <Why dot={greendot} textcon="textcong" title="Easy Discovery" style="whyg" desc=" Find events that match your interests with our smart search and recommendation system." />
-                    <Why dot={bluedot} textcon="textconb" title="Secure Booking" style="whyb"  desc="Book with confidence using our secure payment system and get instant confirmation." />
-                    <Why dot={greendot} textcon="textcong" title="Amazing Experience" style="whyg" desc="Join millions of happy event-goers who trust us for their entertainment needs." />
+               <Folder
+  color="#c8f22b"
+  size={2.6}
+  className="custom-folder"
+  items={[
+    <Why
+      textcon="textcong"
+      title="Easy Discovery"
+      style="whyg"
+      textstyle="whytit"
+      pstyle="whyp"
+      desc="Find events that match your interests with our smart search and recommendation system."
+
+    />,
+    <Why
+      textcon="textcong"
+      title="Secure Booking"
+      style="whyg"
+      textstyle="whytitw"
+      pstyle="whypw"
+      desc="Book with confidence using our secure payment system and get instant confirmation."
+    />,
+    <Why
+      
+      textcon="textcong"
+      textstyle="whytit"
+      pstyle="whyp"
+      title="Amazing Experience"
+      style="whyg"
+      desc="Join millions of happy event-goers who trust us for their entertainment needs."
+
+    
+    />
+  ]}
+/>
 
             
             </div>
@@ -433,23 +483,8 @@ const Home = () => {
 
         </section>
         
-        <footer>
-            <img className='footbg' src={footbg} alt="" />
-            <div className="footercont">
-                <div className="col1">
-                    <img src={logo} alt="" />
-                    <p>Making event discovery and booking simple and fun for everyone.</p>
-                </div>
-
-                <Footercol title="Quick Links" link1="Browse Events" link2="Categories" link3="Create Event" link4="Help Center" />
-                <Footercol title="Company" link1="About Us" link2="Careers" link3="Press" link4="Contact" />
-
-                <div className="col1">
-                    <h1>Follow Us</h1>
-                    <img src={smicons} alt="" />
-                    </div>           
-            </div>
-        </footer>
+        <Footer />
+        </main>
         </>
      );
 }

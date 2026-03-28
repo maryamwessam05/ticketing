@@ -6,7 +6,7 @@
 
 .blue{
     display: flex;
-padding: 18px 32px 19px 32px;
+padding: 18px 32px;
 justify-content: center;
 align-items: center;
 gap: 11px;
@@ -72,6 +72,7 @@ background: #C8F22B;
 cursor: pointer;
 width: 100%;
 transition: all 300ms ease;
+border: none;
 }
 
 .green h3{
@@ -145,4 +146,21 @@ letter-spacing: -0.5px;
 .whitetrans:hover{
       transform: translateY(-3px);
     box-shadow: 0 4px 0 0 #ffffff;
+}
+
+
+
+    @media (min-width: 768px) and (max-width: 1024px){
+
+        .green{
+            padding: 11px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+    border-radius: 9999px;
+    background: #C8F22B;
+    cursor: pointer;
+    width: 100%;
+
+        }
 }
