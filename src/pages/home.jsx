@@ -28,6 +28,15 @@ import DashedLine from '../components/dashed';
 import Why from '../components/why';
 import greendot from "../assets/green.svg"
 import bluedot from "../assets/blue.svg"
+import Chips from '../components/chips';
+import calen from "../assets/featevent01.svg"
+import loc2 from "../assets/featevent02.svg"
+import people from "../assets/featevent03.svg"
+import featimg from "../assets/featimg.png"
+import featborder from "../assets/framegreen.svg"
+import SquareDraw from '../components/squaredraw';
+
+
 
 const Home = () => {
       const [aboutStarted, setAboutStarted] = useState(false);
@@ -183,6 +192,34 @@ const Home = () => {
 
             
             </div>
+        </section>
+
+        <section className="section6">
+           <div className="featetxt">
+            <h1>Summer Music Festival 2025</h1>
+            <p>Join us for three days of non-stop music, art, and 
+            unforgettable memories. Featuring 50+ artists across 5 
+            stages.</p>
+            <div className="chips">
+                <Chips icon={calen} text="July 15-17, 2025" />
+                <Chips icon={loc2} text="Beachside Arena" />
+                <Chips icon={people} text="20,000 Attendees" />
+            </div>
+            <div className="featactions">
+                <Bluebtn style="white" txt="Book Now - From $89" />
+                <Bluebtn style="whitetrans" txt="Book Now - From $89" />
+
+            </div>
+           </div>
+
+           <div className="featimg">
+            <img className='recfeat' src={rec} alt="" />
+            <img className='featimg2' src={featimg} alt="" />
+            <div className="bordergreen">
+
+            <SquareDraw />
+            </div>
+           </div>
         </section>
         </>
      );

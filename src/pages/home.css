@@ -357,3 +357,80 @@ position: relative;
     width: 100%;
 }
 
+.section6{
+    display: flex;
+width: 90%;
+padding: 78px 64px;
+align-items: center;
+    justify-content: space-between;margin-top: 100px;
+border-radius: 45px;
+border: 0 solid #E5E7EB;
+background: linear-gradient(0deg, #2F91F8 0%, #2F91F8 100%), rgba(0, 0, 0, 0.00);
+}
+
+.chips{
+    display: flex;
+align-items: flex-start;
+align-content: flex-start;
+gap: 16px;
+flex-wrap: wrap;
+}
+
+.featetxt{
+    display: flex;
+width: 50%;
+flex-direction: column;
+align-items: flex-start;
+gap: 24px;
+flex-shrink: 0;
+}
+
+.featetxt h1{
+    color: #FFF;
+font-family: Outfit;
+font-size: 60px;
+font-style: normal;
+font-weight: 400;
+line-height: 60px; /* 100% */
+letter-spacing: -0.5px;
+}
+
+.featetxt p{
+    color: #DBEAFE;
+font-family: Outfit;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px; /* 140% */
+letter-spacing: -0.5px;
+}
+
+.featactions{
+    display: flex;
+align-items: flex-start;
+gap: 24px;
+}
+
+.featimg{
+    position: relative;
+    width: 50%;
+}
+.recfeat{
+        position: absolute;
+    top: -38px;
+    left: -42px;
+    z-index: 99999;
+    animation: popIn 0.8s ease both;
+animation: rotate 5s linear infinite;    
+
+}
+.featimg2{
+        z-index: 999;
+position: relative;
+}
+.bordergreen{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100%;
+}
