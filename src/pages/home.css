@@ -18,7 +18,7 @@ padding-top: 50px;
 flex-direction: column;
 align-items: center;
 gap: 100px;
-overflow-x: hidden;
+
 }
 .hero{
     display: flex;
@@ -186,7 +186,7 @@ line-height: normal;
 
 .abtimg{
     position: relative;
-    width: 50%;
+    width: 40%;
     height: 100%;
 }
 
@@ -367,7 +367,7 @@ position: relative;
 
 .section6{
     display: flex;
-width: 90%;
+width: 77%;
 padding: 78px 64px;
 align-items: center;
     justify-content: space-between;margin-top: 100px;
@@ -375,6 +375,7 @@ border-radius: 45px;
 border: 0 solid #E5E7EB;
 background: linear-gradient(0deg, #2F91F8 0%, #2F91F8 100%), rgba(0, 0, 0, 0.00);
 }
+
 
 .chips{
     display: flex;
@@ -1025,4 +1026,47 @@ form{
 }
 
 
+}
+
+.lang{
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+html[dir="rtl"] body{
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] nav,
+html[dir="rtl"] .navactions,
+html[dir="rtl"] .burgerlist,
+html[dir="rtl"] .row,
+html[dir="rtl"] .bookingcont,
+html[dir="rtl"] .abttxt,
+html[dir="rtl"] .herotxt{
+  direction: rtl;
+}
+
+html[dir="rtl"] input,
+html[dir="rtl"] select,
+html[dir="rtl"] textarea{
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .pair label,
+html[dir="rtl"] .pair,
+html[dir="rtl"] p,
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6{
+  text-align: right;
 }

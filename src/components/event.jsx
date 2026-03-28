@@ -1,15 +1,17 @@
 import React from 'react';
-import "./event.css"
-import bluearrow from "../assets/bluearrow.svg"
-import loc from "../assets/loc.svg"
-import date from "../assets/date.svg"
+import "./event.css";
+import bluearrow from "../assets/bluearrow.svg";
+import loc from "../assets/loc.svg";
+import date from "../assets/date.svg";
 import Bluebtn from './bluebtn';
+import { useTranslation } from "react-i18next";
 
 const Event = (props) => {
+    const { t } = useTranslation();
+
     return (  
         <>
             <div className="event">
-
                 <div className="eventimg">
                     <img className='evimg' src={props.img} alt="" />
                     <img className='bluearrow' src={bluearrow} alt="" />
@@ -25,19 +27,19 @@ const Event = (props) => {
                         <span>{props.location}</span>
                     </div>
                 </div>
+
                 <div className="eventname">
                     <h2>{props.name}</h2>
                     <p>{props.desc}</p>
                 </div>
+
                 <div className="price">
                     <h4>{props.price}</h4>
                     <div className="btncont">
-                      <Bluebtn style="green" txt="Get Tickets" />
-
+                        <Bluebtn style="green" txt={t("event.getTickets")} />
                     </div>
                 </div>
             </div>
-        
         </>
     );
 }

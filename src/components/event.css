@@ -61,23 +61,25 @@ align-self: stretch;
 }
 
 .eventname h2{
-    color: #111827;
-font-family: Outfit;
-font-size: 30px;
-font-style: normal;
-font-weight: 400;
-line-height: 49.745px; /* 140% */
-letter-spacing: -0.888px;
+ color: #111827;
+    font-family: Outfit;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30.745px;
+    letter-spacing: -0.888px;
+    height: 62px;
 }
 
-.eventname p{
+.eventname p {
     color: #4B5563;
-font-family: Outfit;
-font-size: 15.629px;
-font-style: normal;
-font-weight: 400;
-line-height: 22.327px; /* 142.857% */
-letter-spacing: -0.558px;
+    font-family: Outfit;
+    font-size: 15.629px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17.327px;
+    letter-spacing: -0.558px;
+    height: 66px;
 }
 
 .price{

@@ -1,4 +1,5 @@
 import React, { useState , useEffect } from 'react';
+import { useTranslation } from "react-i18next";
 import "./home.css"
 import Navbar from '../components/navbar';
 import Bluebtn from '../components/bluebtn';
@@ -55,7 +56,6 @@ import Footer from '../components/footer';
 
 
 const Home = () => {
-    
     const [count, setCount] = useState(0);
 
       const [aboutStarted, setAboutStarted] = useState(false);
@@ -64,6 +64,7 @@ const Home = () => {
     const [showImg3, setShowImg3] = useState(false);
     const [showImg4, setShowImg4] = useState(false);
     const [showShapes, setShowShapes] = useState(false);
+    const { t } = useTranslation();
     
     const handleAboutEnter = () => {
         if (aboutStarted) return;
@@ -111,13 +112,12 @@ const Home = () => {
     const [successMessage, setSuccessMessage] = useState("");
 
     const eventOptions = [
-    "Electric Nights Festival",
-    "Contemporary Art Expo",
-    "Gourmet Street Food Fest",
-    "Summer Music Festival",
-    "Tech Innovators Summit",
-    ];
-
+  t("eventsList.electric"),
+  t("eventsList.art"),
+  t("eventsList.food"),
+  t("eventsList.summer"),
+  t("eventsList.tech"),
+];
 
     const handleChange = (e) => {
     const { name, value } = e.target;
@@ -137,21 +137,21 @@ const Home = () => {
     const newErrors = {};
 
     if (!formData.fullName.trim()) {
-        newErrors.fullName = "Full name is required";
+        newErrors.fullName = t("validation.fullNameRequired");
     }
 
     if (!formData.email.trim()) {
-        newErrors.email = "Email is required";
+        newErrors.email = t("validation.emailRequired");
     } else if (!formData.email.includes("@")) {
-        newErrors.email = "Email must include @";
+        newErrors.email = t("validation.emailInvalid");
     }
 
     if (count === 0) {
-        newErrors.tickets = "Please select at least 1 ticket";
+        newErrors.tickets = t("validation.ticketsRequired");
     }
 
     if (!formData.event) {
-        newErrors.event = "Please choose an event";
+        newErrors.event = t("validation.eventRequired");
     }
 
     return newErrors;
@@ -169,7 +169,7 @@ const Home = () => {
     }
 
     setErrors({});
-    setSuccessMessage("Tickets booked successfully!");
+    setSuccessMessage(t("booking.success"));
 
     console.log({
         ...formData,
@@ -208,23 +208,20 @@ const Home = () => {
             <div className="dectext">
 
                 <DecryptedText
-                text="Your Next
-                            Adventure
-                            Awaits"
-                        animateOn="view"
-                        revealDirection="start"
-                        sequential
-                    className="herolabel"
-
+                text={t("hero.title")}
+                animateOn="view"
+                revealDirection="start"
+                sequential
+                className="herolabel"
                 useOriginalCharsOnly={false}
                 />
             </div>
                     
-                <p>Book tickets to concerts, festivals, workshops, and cultural events. Join thousands of happy attendees!</p>
-                <div className="herobtns">
-                    <Bluebtn style="blue" txt="Explore Events "/>
-                    <Bluebtn style="grey" txt="How it works "/>
+                <p>{t("hero.desc")}</p>
 
+                <div className="herobtns">
+                    <Bluebtn style="blue" txt={t("hero.explore")} />
+                    <Bluebtn style="grey" txt={t("hero.how")} />
                 </div>
                 <img src={rec} alt="" className='rec' />
 
@@ -259,13 +256,14 @@ const Home = () => {
           <div className="about" id="about" onMouseEnter={handleAboutEnter}>
             <div className="abttxt">
                 <BlurText
-                text="About"
+                text={t("about.title")}
                 delay={200}
                 animateBy="words"
                 direction="top"
                 className="hight"
                 />
-                <p>We blend culture, technology, and design to make every booking feel like part of the show.From underground performances to mega festivals, helps you discover and secure moments that matter.</p>
+
+                <p>{t("about.desc")}</p>
             </div>
 
             <div className="abtimg">
@@ -281,28 +279,53 @@ const Home = () => {
         </div>
 
         <section className="section3" id='cat'>
-            <Header style="headerblack" title="Browse by Category" subheading="Find events that match your vibe" />
-
+           <Header
+            style="headerblack"
+            title={t("categories.title")}
+            subheading={t("categories.sub")}
+            />
             <div className="categories">
-                <Category style="catselected" type="Music" sub="240+ events" image={cat1} />
-                <Category style="cat" type="Art" sub="240+ events" image={cat2} contstyle="contpad" />
-                <Category style="cat" type="Tech" sub="240+ events" image={cat3} />
-                <Category style="cat" type="Food" sub="240+ events" image={cat4}  contstyle="contpad"/>
-
-
+                <Category style="catselected" type={t("categories.music")} sub={t("categories.eventsCount")} image={cat1} />
+                <Category style="cat" type={t("categories.art")} sub={t("categories.eventsCount")} image={cat2} contstyle="contpad" />
+                <Category style="cat" type={t("categories.tech")} sub={t("categories.eventsCount")} image={cat3} />
+                <Category style="cat" type={t("categories.food")} sub={t("categories.eventsCount")} image={cat4}  contstyle="contpad"/>
             </div>
         </section>
 
         <section className="section4" id='events'>
             <div className="sec3head">
-            <Header style="headerblack" title="Trending Events" subheading="Don't miss out on these hot tickets" />
-            <Bluebtn style="green" txt="View All" icon={blackarrow} />
+            <Header style="headerblack" title={t("trending.title")} subheading={t("trending.sub")} />
+            <Bluebtn style="green" txt={t("trending.viewAll")} icon={blackarrow} />
             </div>
 
             <div className="events">
-                <Event img={eventimg1} date="Jan 5, 2026" location="Modern Gallery" name="Electric Nights Festival" desc="Experience the best electronic music with world-class DJs and stunning visuals." price="$45" />
-                <Event img={eventimg2} date="Jan 15, 2026" location="Downtown Arena" name="Contemporary Art Expo" desc="Discover emerging artists and stunning contemporary pieces in this exclusive exhibition." price="$25" />
-                <Event img={eventimg3} date="Jan 25, 2026" location="Modern Gallery" name="Gourmet Street Food Fest" desc="Taste dishes from 50+ vendors featuring international cuisines and local favorites." price="$45" />
+
+                <Event
+                    img={eventimg1}
+                    date={t("eventsData.e1.date")}
+                    location={t("eventsData.e1.location")}
+                    name={t("eventsData.e1.name")}
+                    desc={t("eventsData.e1.desc")}
+                    price={t("eventsData.e1.price")}
+                />
+
+                <Event
+                    img={eventimg2}
+                    date={t("eventsData.e2.date")}
+                    location={t("eventsData.e2.location")}
+                    name={t("eventsData.e2.name")}
+                    desc={t("eventsData.e2.desc")}
+                    price={t("eventsData.e2.price")}
+                />
+
+                <Event
+                    img={eventimg3}
+                    date={t("eventsData.e3.date")}
+                    location={t("eventsData.e3.location")}
+                    name={t("eventsData.e3.name")}
+                    desc={t("eventsData.e3.desc")}
+                    price={t("eventsData.e3.price")}
+                />
 
             </div>
 
@@ -310,68 +333,63 @@ const Home = () => {
         </section>
 
         <section className='section5'>
-            <Header style="headerblack" title="Why Choose EventHub?" subheading="We make discovering and booking events simple, safe, and enjoyable" />
-            <div className="wrapper">
-                <div className="linedash">
-                <DashedLine />  
-                </div>
-               <Folder
-  color="#c8f22b"
-  size={2.6}
-  className="custom-folder"
-  items={[
-    <Why
-      textcon="textcong"
-      title="Easy Discovery"
-      style="whyg"
-      textstyle="whytit"
-      pstyle="whyp"
-      desc="Find events that match your interests with our smart search and recommendation system."
+           <Header
+            style="headerblack"
+            title={t("why.title")}
+            subheading={t("why.sub")}
+            />
 
-    />,
-    <Why
-      textcon="textcong"
-      title="Secure Booking"
-      style="whyg"
-      textstyle="whytitw"
-      pstyle="whypw"
-      desc="Book with confidence using our secure payment system and get instant confirmation."
-    />,
-    <Why
-      
-      textcon="textcong"
-      textstyle="whytit"
-      pstyle="whyp"
-      title="Amazing Experience"
-      style="whyg"
-      desc="Join millions of happy event-goers who trust us for their entertainment needs."
-
-    
-    />
-  ]}
-/>
-
-            
-            </div>
+            <Folder
+            color="#c8f22b"
+            size={2.6}
+            className="custom-folder"
+            items={[
+                <Why
+                textcon="textcong"
+                title={t("why.easyTitle")}
+                style="whyg"
+                textstyle="whytit"
+                pstyle="whyp"
+                desc={t("why.easyDesc")}
+                />,
+                <Why
+                textcon="textcong"
+                title={t("why.secureTitle")}
+                style="whyg"
+                textstyle="whytitw"
+                pstyle="whypw"
+                desc={t("why.secureDesc")}
+                />,
+                <Why
+                textcon="textcong"
+                textstyle="whytit"
+                pstyle="whyp"
+                title={t("why.amazingTitle")}
+                style="whyg"
+                desc={t("why.amazingDesc")}
+                />
+            ]}
+            />
         </section>
 
         <section className="section6">
-           <div className="featetxt">
-            <h1>Summer Music Festival 2025</h1>
-            <p>Join us for three days of non-stop music, art, and 
-            unforgettable memories. Featuring 50+ artists across 5 
-            stages.</p>
-            <div className="chips">
-                <Chips icon={calen} text="July 15-17, 2025" />
-                <Chips icon={loc2} text="Beachside Arena" />
-                <Chips icon={people} text="20,000 Attendees" />
-            </div>
-            <div className="featactions">
-                <Bluebtn style="white" txt="Book Now - From $89" />
-                <Bluebtn style="whitetrans" txt="Book Now - From $89" />
+            <div className="featetxt">
 
+           <h1>{t("featured.title")}</h1>
+            <p>{t("featured.desc")}</p>
+            <div className="chips">
+                <Chips icon={calen} text={t("featured.date")} />
+                <Chips icon={loc2} text={t("featured.place")} />
+                <Chips icon={people} text={t("featured.attendees")} />
             </div>
-           </div>
+
+            <div className="featactions">
+                <Bluebtn style="white" txt={t("featured.book")} />
+                <Bluebtn style="whitetrans" txt={t("featured.book")} />
+            </div>
+            </div>
+
+        
 
            <div className="featimg">
             <img className='recfeat' src={rec} alt="" />
@@ -386,31 +404,56 @@ const Home = () => {
         <section className="section7">
             <div className="headingt">
                 <img className='testi' src={testi} alt="" />  
-                <Header style="headerblack" title="What People Say" subheading="Hear from our happy event-goers" />
+               <Header
+                style="headerblack"
+                title={t("testimonials.title")}
+                subheading={t("testimonials.sub")}
+                />
             </div>
             <div className="testiwrap">
                 <div className="testimonials">
-                    <Testimonial say="EventHub made finding and booking concerts so easy! The interface is beautiful and the booking process is seamless." peop={peop1} name="Omar Kareem" loc="Cairo" />
-                    <Testimonial say="Amazing platform! Found the perfect concert and the booking process was so smooth. Highly recommended!" peop={peop2} name="Sarah Ahmed" loc="Cairo" />
-                    <Testimonial say="The best event platform I've used. Great selection, fair prices, and excellent customer service. Five stars!" peop={peop3} name="Lina Ahmed" loc="Cairo" />
+
+                    <Testimonial
+                    say={t("testimonialsData.t1.say")}
+                    peop={peop1}
+                    name={t("testimonialsData.t1.name")}
+                    loc={t("testimonialsData.t1.loc")}
+                    />
+
+                    <Testimonial
+                    say={t("testimonialsData.t2.say")}
+                    peop={peop2}
+                    name={t("testimonialsData.t2.name")}
+                    loc={t("testimonialsData.t2.loc")}
+                    />
+
+                    <Testimonial
+                    say={t("testimonialsData.t3.say")}
+                    peop={peop3}
+                    name={t("testimonialsData.t3.name")}
+                    loc={t("testimonialsData.t3.loc")}
+                    />
 
                 </div>
-
             </div>
         </section>
 
         <section className='section8'>
             <div className="bookingcont">
-                <Header style="headerwhite" title="Book Your Tickets" subheading="Fill in your details and get ready for an amazing experience" />
+                <Header
+                style="headerwhite"
+                title={t("booking.title")}
+                subheading={t("booking.sub")}
+                />
 
                 <form onSubmit={handleSubmit}>
                 <div className="row">
                     <div className="pair">
-                    <label htmlFor="fullname">Full Name</label>
+                    <label htmlFor="fullname">{t("booking.fullName")}</label>
                     <input
                         type="text"
                         name="fullName"
-                        placeholder="Enter your name"
+                        placeholder={t("booking.fullNamePlaceholder")}
                         id="fullname"
                         className="fullname"
                         value={formData.fullName}
@@ -420,11 +463,11 @@ const Home = () => {
                     </div>
 
                     <div className="pair">
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email">{t("booking.email")}</label>
                     <input
                         type="text"
                         name="email"
-                        placeholder="Enter your email"
+                        placeholder={t("booking.emailPlaceholder")}
                         id="email"
                         className="email"
                         value={formData.email}
@@ -436,7 +479,7 @@ const Home = () => {
 
                 <div className="row">
                     <div className="pair">
-                    <label htmlFor="">Number of tickets</label>
+                    <label htmlFor="">{t("booking.tickets")}</label>
                     <div className="counter">
                         <button type="button" onClick={decrease}>
                         <img src={minus} alt="decrease" />
@@ -450,7 +493,7 @@ const Home = () => {
                     </div>
 
                     <div className="pair">
-                    <label htmlFor="event">Event</label>
+                    <label htmlFor="event">{t("booking.event")}</label>
                     <div className="inputdrop">
                         <select
                         name="event"
@@ -458,7 +501,7 @@ const Home = () => {
                         value={formData.event}
                         onChange={handleChange}
                         >
-                        <option value="">Select an event</option>
+                        <option value="">{t("booking.selectEvent")}</option>
                         {eventOptions.map((event, index) => (
                             <option key={index} value={event}>
                             {event}
@@ -471,7 +514,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <Submitbtn style="green" txt="Get Tickets" type="submit" />
+                <Submitbtn style="green" txt={t("booking.submit")} type="submit" />
 
                 {successMessage && <p className="success">{successMessage}</p>}
                 </form>
