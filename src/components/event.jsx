@@ -31,7 +31,10 @@ const Event = (props) => {
                 </div>
                 <div className="price">
                     <h4>{props.price}</h4>
-                    <Bluebtn style="green" txt="Get Tickets" />
+                    <div className="btncont">
+                      <Bluebtn style="green" txt="Get Tickets" />
+
+                    </div>
                 </div>
             </div>
         

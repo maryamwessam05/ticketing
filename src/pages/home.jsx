@@ -39,10 +39,19 @@ import Testimonial from '../components/testimonial';
 import peop1 from "../assets/people01.png"
 import peop2 from "../assets/people02.png"
 import peop3 from "../assets/people03.png"
-
+import minus from "../assets/minus.svg"
+import plus from "../assets/plus.svg"
+import droparw from "../assets/blackarrow.svg"
+import arw1 from "../assets/arrow01.svg"
+import arw2 from "../assets/arrow02.svg"
+import arw3 from "../assets/arrow03.svg"
+import arw4 from "../assets/arrow04.svg"
+import Submitbtn from '../components/submitbtn';
 
 
 const Home = () => {
+    const [count, setCount] = useState(0);
+
       const [aboutStarted, setAboutStarted] = useState(false);
     const [showImg1, setShowImg1] = useState(false);
     const [showImg2, setShowImg2] = useState(false);
@@ -74,6 +83,100 @@ const Home = () => {
         }, 2000);
     };
 
+
+    const increase = () => {
+        if (count < 10) {
+            setCount(count + 1);
+        }
+    }
+    const decrease = () => {
+        if (count > 0) {
+            setCount(count - 1);
+        }
+    }
+
+    const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    event: "",
+    });
+
+    const [errors, setErrors] = useState({});
+    const [successMessage, setSuccessMessage] = useState("");
+
+    const eventOptions = [
+    "Electric Nights Festival",
+    "Contemporary Art Expo",
+    "Gourmet Street Food Fest",
+    "Summer Music Festival",
+    "Tech Innovators Summit",
+    ];
+
+
+    const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+    }));
+
+    setErrors((prev) => ({
+        ...prev,
+        [name]: "",
+    }));
+    };
+
+    const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.fullName.trim()) {
+        newErrors.fullName = "Full name is required";
+    }
+
+    if (!formData.email.trim()) {
+        newErrors.email = "Email is required";
+    } else if (!formData.email.includes("@")) {
+        newErrors.email = "Email must include @";
+    }
+
+    if (count === 0) {
+        newErrors.tickets = "Please select at least 1 ticket";
+    }
+
+    if (!formData.event) {
+        newErrors.event = "Please choose an event";
+    }
+
+    return newErrors;
+    };
+
+    const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const validationErrors = validateForm();
+
+    if (Object.keys(validationErrors).length > 0) {
+        setErrors(validationErrors);
+        setSuccessMessage("");
+        return;
+    }
+
+    setErrors({});
+    setSuccessMessage("Tickets booked successfully!");
+
+    console.log({
+        ...formData,
+        tickets: count,
+    });
+
+    setFormData({
+        fullName: "",
+        email: "",
+        event: "",
+    });
+    setCount(0);
+    };
 
 
     return ( 
@@ -240,6 +343,90 @@ const Home = () => {
                 </div>
 
             </div>
+        </section>
+
+        <section className='section8'>
+            <div className="bookingcont">
+                <Header style="headerwhite" title="Book Your Tickets" subheading="Fill in your details and get ready for an amazing experience" />
+
+                <form onSubmit={handleSubmit}>
+                <div className="row">
+                    <div className="pair">
+                    <label htmlFor="fullname">Full Name</label>
+                    <input
+                        type="text"
+                        name="fullName"
+                        placeholder="Enter your name"
+                        id="fullname"
+                        className="fullname"
+                        value={formData.fullName}
+                        onChange={handleChange}
+                    />
+                    {errors.fullName && <span className="error">{errors.fullName}</span>}
+                    </div>
+
+                    <div className="pair">
+                    <label htmlFor="email">Email</label>
+                    <input
+                        type="text"
+                        name="email"
+                        placeholder="Enter your email"
+                        id="email"
+                        className="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                    />
+                    {errors.email && <span className="error">{errors.email}</span>}
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="pair">
+                    <label htmlFor="">Number of tickets</label>
+                    <div className="counter">
+                        <button type="button" onClick={decrease}>
+                        <img src={minus} alt="decrease" />
+                        </button>
+                        <h1>{count}</h1>
+                        <button type="button" onClick={increase}>
+                        <img src={plus} alt="increase" />
+                        </button>
+                    </div>
+                    {errors.tickets && <span className="error">{errors.tickets}</span>}
+                    </div>
+
+                    <div className="pair">
+                    <label htmlFor="event">Event</label>
+                    <div className="inputdrop">
+                        <select
+                        name="event"
+                        id="event"
+                        value={formData.event}
+                        onChange={handleChange}
+                        >
+                        <option value="">Select an event</option>
+                        {eventOptions.map((event, index) => (
+                            <option key={index} value={event}>
+                            {event}
+                            </option>
+                        ))}
+                        </select>
+                        <img className="droparw" src={droparw} alt="" />
+                    </div>
+                    {errors.event && <span className="error">{errors.event}</span>}
+                    </div>
+                </div>
+
+                <Submitbtn style="green" txt="Get Tickets" type="submit" />
+
+                {successMessage && <p className="success">{successMessage}</p>}
+                </form>
+            </div>
+            <img src={arw1} alt="" className='arw1'/>
+            <img src={arw2} alt="" className='arw2'/>
+            <img src={arw3} alt="" className='arw3'/>
+            <img src={arw4} alt="" className='arw4'/>
+
         </section>
         </>
      );
