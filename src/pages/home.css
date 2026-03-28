@@ -138,3 +138,150 @@ animation: rotate 5s linear infinite;
     }
     
 }
+
+.about{
+    display: flex;
+padding: 55px 45px;
+justify-content: space-between;
+align-items: center;
+align-self: stretch;
+background: #2F91F8;
+width: 100%;
+height: 88vh;
+position: relative;
+}
+.abttxt{
+    width: 50%;
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 20px;
+justify-content: space-between;
+}
+
+.hight{
+    color: #FFF;
+
+font-family: Outfit;
+font-size: 18vw;
+font-style: normal;
+font-weight: 200;
+line-height: 220px; /* 135% */
+letter-spacing: -8.527px;
+}
+
+.abttxt p{
+    color: rgba(255, 255, 255, 0.70);
+font-family: Outfit;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.abtimg{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+.abtimg1,
+.abtimg2,
+.abtimg3,
+.abtimg4{
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.abtimg1{
+    position: absolute;
+    top: 330px;
+    right: 246px;
+    z-index: 999;
+}
+
+.abtimg2{
+    position: absolute;
+    top: 287px;
+    right: 55px;
+    z-index: 99;
+}
+
+.abtimg3{
+    position: absolute;
+    top: 125px;
+    right: 311px;
+    z-index: 99;
+}
+
+.abtimg4{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.show-img{
+    animation: show 1.5s ease both;
+}
+
+.star1{
+    position: absolute;
+    scale: 0.7;
+    bottom: 69px;
+    left: 153px;
+    z-index: 9999;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.star2{
+    position: absolute;
+    right: 271px;
+    top: 50px;
+    z-index: 999;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.click{
+    z-index: 9999;
+    position: absolute;
+    bottom: -22px;
+    right: 177px;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.show-shape{
+    animation: popIn 0.8s ease both;
+}
+
+.star1.show-shape,
+.star2.show-shape{
+    animation:
+        popIn 0.8s ease both,
+        rotate 5s linear infinite 0.8s;
+}
+
+@keyframes show{
+    0%{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes popIn{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+

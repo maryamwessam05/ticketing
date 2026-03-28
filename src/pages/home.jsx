@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./home.css"
 import Navbar from '../components/navbar';
 import Bluebtn from '../components/bluebtn';
@@ -7,7 +7,48 @@ import DecryptedText from "../component/DecryptedText";
 import rec from "../assets/Rectangle 18.svg"
 import LineDraw from '../components/linedraw';
 import DrawSVG from "../components/drawsvg";
+import abtimg1 from "../assets/abtimg01.png"
+import abtimg2 from "../assets/abtimg02.png"
+import abtimg3 from "../assets/abtimg03.png"
+import abtimg4 from "../assets/abtimg04.png"
+import click from "../assets/Vector.svg"
+import BlurText from "../componentblur/BlurText";
+
+
 const Home = () => {
+      const [aboutStarted, setAboutStarted] = useState(false);
+    const [showImg1, setShowImg1] = useState(false);
+    const [showImg2, setShowImg2] = useState(false);
+    const [showImg3, setShowImg3] = useState(false);
+    const [showImg4, setShowImg4] = useState(false);
+    const [showShapes, setShowShapes] = useState(false);
+
+    const handleAboutEnter = () => {
+        if (aboutStarted) return;
+
+        setAboutStarted(true);
+
+        setShowImg1(true);
+
+        setTimeout(() => {
+            setShowImg2(true);
+        }, 500);
+
+        setTimeout(() => {
+            setShowImg3(true);
+        }, 1000);
+
+        setTimeout(() => {
+            setShowImg4(true);
+        }, 1500);
+
+        setTimeout(() => {
+            setShowShapes(true);
+        }, 2000);
+    };
+
+
+
     return ( 
         <>
         <Navbar />
@@ -62,6 +103,30 @@ const Home = () => {
              </div>
             
         </section>
+
+          <div className="about" id="about" onMouseEnter={handleAboutEnter}>
+            <div className="abttxt">
+                <BlurText
+                text="About"
+                delay={200}
+                animateBy="words"
+                direction="top"
+                className="hight"
+                />
+                <p>We blend culture, technology, and design to make every booking feel like part of the show.From underground performances to mega festivals, helps you discover and secure moments that matter.</p>
+            </div>
+
+            <div className="abtimg">
+                <img src={abtimg1} className={`abtimg1 ${showImg1 ? "show-img" : ""}`} alt="" />
+                <img src={abtimg2} className={`abtimg2 ${showImg2 ? "show-img" : ""}`} alt="" />
+                <img src={abtimg3} className={`abtimg3 ${showImg3 ? "show-img" : ""}`} alt="" />
+                <img src={abtimg4} className={`abtimg4 ${showImg4 ? "show-img" : ""}`} alt="" />
+
+                <img src={rec} className={`star1 ${showShapes ? "show-shape" : ""}`} alt="" />
+                <img src={rec} className={`star2 ${showShapes ? "show-shape" : ""}`} alt="" />
+                <img src={click} className={`click ${showShapes ? "show-shape" : ""}`} alt="" />
+            </div>
+        </div>
         </>
      );
 }
