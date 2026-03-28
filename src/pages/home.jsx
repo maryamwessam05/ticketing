@@ -20,6 +20,10 @@ import cat2 from "../assets/categimg02.png"
 import cat3 from "../assets/categimg03.png"
 import cat4 from "../assets/categimg04.png"
 import blackarrow from "../assets/arrowblack.svg"
+import Event from '../components/event';
+import eventimg1 from "../assets/trendimg01.png"
+import eventimg2 from "../assets/trendimg02.png"
+import eventimg3 from "../assets/trendimg03.png"
 
 
 const Home = () => {
@@ -148,11 +152,17 @@ const Home = () => {
             </div>
         </section>
 
-        <section className="section3" id='cat'>
+        <section className="section4" id='events'>
             <div className="sec3head">
-
             <Header style="headerblack" title="Trending Events" subheading="Don't miss out on these hot tickets" />
             <Bluebtn style="green" txt="View All" icon={blackarrow} />
+            </div>
+
+            <div className="events">
+                <Event img={eventimg1} date="Jan 5, 2026" location="Modern Gallery" name="Electric Nights Festival" desc="Experience the best electronic music with world-class DJs and stunning visuals." price="$45" />
+                <Event img={eventimg2} date="Jan 15, 2026" location="Downtown Arena" name="Contemporary Art Expo" desc="Discover emerging artists and stunning contemporary pieces in this exclusive exhibition." price="$25" />
+                <Event img={eventimg3} date="Jan 25, 2026" location="Modern Gallery" name="Gourmet Street Food Fest" desc="Taste dishes from 50+ vendors featuring international cuisines and local favorites." price="$45" />
+
             </div>
 
             
