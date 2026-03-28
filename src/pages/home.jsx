@@ -25,7 +25,9 @@ import eventimg1 from "../assets/trendimg01.png"
 import eventimg2 from "../assets/trendimg02.png"
 import eventimg3 from "../assets/trendimg03.png"
 import DashedLine from '../components/dashed';
-
+import Why from '../components/why';
+import greendot from "../assets/green.svg"
+import bluedot from "../assets/blue.svg"
 
 const Home = () => {
       const [aboutStarted, setAboutStarted] = useState(false);
@@ -174,8 +176,12 @@ const Home = () => {
             <div className="wrapper">
                 <div className="linedash">
                 <DashedLine />  
-
                 </div>
+                    <Why dot={greendot} textcon="textcong" title="Easy Discovery" style="whyg" desc=" Find events that match your interests with our smart search and recommendation system." />
+                    <Why dot={bluedot} textcon="textconb" title="Secure Booking" style="whyb"  desc="Book with confidence using our secure payment system and get instant confirmation." />
+                    <Why dot={greendot} textcon="textcong" title="Amazing Experience" style="whyg" desc="Join millions of happy event-goers who trust us for their entertainment needs." />
+
+            
             </div>
         </section>
         </>

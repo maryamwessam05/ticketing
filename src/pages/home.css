@@ -338,7 +338,7 @@ gap: 40px;
     display: flex;
 flex-direction: column;
 align-items: center;
-gap: 45px;
+gap: 100px;
 align-self: stretch;
 position: relative;
 }
@@ -347,8 +347,13 @@ position: relative;
     width: 90%;
     display: flex;
     position: relative;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .linedash{
     position: absolute;
+    width: 100%;
 }
+
