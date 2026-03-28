@@ -47,6 +47,10 @@ import arw2 from "../assets/arrow02.svg"
 import arw3 from "../assets/arrow03.svg"
 import arw4 from "../assets/arrow04.svg"
 import Submitbtn from '../components/submitbtn';
+import footbg from "../assets/footerbg.svg"
+import logo from "../assets/logo.svg"
+import Footercol from '../components/footercol';
+import smicons from "../assets/smicons.svg"
 
 
 const Home = () => {
@@ -428,6 +432,24 @@ const Home = () => {
             <img src={arw4} alt="" className='arw4'/>
 
         </section>
+        
+        <footer>
+            <img className='footbg' src={footbg} alt="" />
+            <div className="footercont">
+                <div className="col1">
+                    <img src={logo} alt="" />
+                    <p>Making event discovery and booking simple and fun for everyone.</p>
+                </div>
+
+                <Footercol title="Quick Links" link1="Browse Events" link2="Categories" link3="Create Event" link4="Help Center" />
+                <Footercol title="Company" link1="About Us" link2="Careers" link3="Press" link4="Contact" />
+
+                <div className="col1">
+                    <h1>Follow Us</h1>
+                    <img src={smicons} alt="" />
+                    </div>           
+            </div>
+        </footer>
         </>
      );
 }
