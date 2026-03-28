@@ -94,3 +94,9 @@ transition: all 300ms ease;
 .catselected:hover{
     scale: 1.1;
 }
+
+@media (min-width: 350px) and (max-width: 768px){
+    .contpad{
+    padding-top: 0;
+}
+}

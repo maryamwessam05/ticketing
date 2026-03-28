@@ -133,3 +133,21 @@ width: 36%;
         display: none;
     }
 }
+@media (min-width: 350px) and (max-width: 768px){
+.burger{
+        display: flex;
+        width: 7vw;
+    }
+    ul{
+        display: none;
+    }
+    .logo{
+        width: 24vw;
+    }
+    nav{
+        padding: 22px 15px;
+    }
+    .navactions{
+        gap: 6px;
+    }
+}

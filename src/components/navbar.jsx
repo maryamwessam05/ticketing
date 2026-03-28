@@ -19,7 +19,7 @@ const Navbar = () => {
     return ( 
         <>
         <nav>
-            <img src={logo} alt="" />
+            <img className='logo' src={logo} alt="" />
 
             <ul>
                 <Navlink navtxt="Events" link="#events"/>

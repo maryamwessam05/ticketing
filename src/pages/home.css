@@ -460,7 +460,6 @@ align-self: stretch;
 .testimonials{
     display: flex;
 align-items: flex-start;
-align-content: flex-start;
 gap: 0 86px;
 flex-wrap: wrap;
 justify-content: center;
@@ -844,4 +843,186 @@ main{
 .col1{
     width: 30%;
 }
+}
+
+@media (min-width: 350px) and (max-width: 768px){
+.hero{
+    padding: 0 25px;
+    flex-direction: column;
+}
+.herotxt , .heroimg{
+    width: 100%;
+}
+.dectext{
+            scale: 0.75;
+        margin-left: -50px;
+}
+.herotxt p{
+        font-size: 20.865px;
+    line-height: 27.41px;
+    margin-top: -36px;
+}
+.ill{
+    scale: 0.9;
+}
+@keyframes scale {
+    0%{
+        opacity: 0;
+        transform: scale(0) rotate(0);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(0.7) rotate(0);
+    }
+    
+}
+.image{
+        position: relative;
+    left: -56px;
+}
+.star {
+    top: 98px;
+    left: 30px;
+}
+.face {
+    bottom: 118px;
+    right: 57px;
+}
+.about{
+        padding: 44px 25px;
+    flex-direction: column;
+    height: 105vh;
+}
+main{
+    gap: 80px;
+}
+.abttxt{
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+    .abtimg {
+                width: 100%;
+        scale: 0.65;
+        left: 50px;
+        margin-top: -17px;
+    }
+.hight{
+    font-size: 35vw;        margin-top: -60px;
+}
+.abttxt p{
+        margin-top: -41px;
+}
+.section3{
+    padding: 0 25px;    
+
+}
+.events{
+    flex-direction: column;
+}
+
+.events .event{
+    width: 85%;
+    flex-direction: column;
+    align-items: center;}
+
+.section5{
+    padding: 0 25px;
+}.custom-folder {
+    transform: scale(1.2);
+    margin-top: 0;
+}
+.section6{
+    margin-top: 0;
+    padding: 25px;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.featetxt{
+    width: 100%;
+    align-items: center;
+    text-align: center;
+        }
+
+.featimg{
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    border-radius: 45px;
+}
+.featetxt h1 {
+
+    font-size: 54px;}
+
+    .featactions{
+        flex-direction: column;
+        gap: 16px;
+    }
+.featimg2{
+    width: 100%;
+    height: 100%;
+}
+.headingt {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 44px;
+}
+.testi{
+    width: 169%;
+}
+.section7 .testimonials{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.testimonials .testimonial {
+    width: 70%;
+    flex-direction: column;
+    gap: 24px;
+}
+.bookingcont{
+        width: 100%;
+    border-radius: 0;
+
+}
+
+form{
+        width: 89%;
+    padding: 15px;
+}
+
+.arw1 , .arw2 ,.arw3 ,.arw4{
+        scale: 0.6;
+    }
+
+    .arw1{
+              top: -56px;
+        right: -59px;
+    }
+
+    .arw2{
+        left: -157px;
+        top: -36px;
+    }
+
+    .arw3{
+      bottom: -74px;
+      right: -81px;
+    }
+
+    .arw4{
+        bottom: -102px;
+    }
+.footercont {
+    flex-direction: column;
+    gap: 40px;
+}
+
+
 }
