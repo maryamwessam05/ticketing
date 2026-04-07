@@ -18,6 +18,7 @@ padding-top: 50px;
 flex-direction: column;
 align-items: center;
 gap: 100px;
+overflow-x: hidden;
 
 }
 .hero{
@@ -146,14 +147,13 @@ animation: rotate 5s linear infinite;
 
 .about{
     display: flex;
-padding: 55px 45px;
-justify-content: space-between;
-align-items: center;
-align-self: stretch;
-background: #2F91F8;
-width: 100%;
-height: 88vh;
-position: relative;
+    padding: 100px 45px 252px 45px;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+    background: #2F91F8;
+    width: 100%;
+    position: relative;
 }
 .abttxt{
     width: 50%;
@@ -161,7 +161,6 @@ position: relative;
 flex-direction: column;
 align-items: flex-start;
 gap: 20px;
-justify-content: space-between;
 }
 
 .hight{
@@ -232,11 +231,12 @@ line-height: normal;
 .star1{
     position: absolute;
     scale: 0.7;
-    bottom: 69px;
-    left: 153px;
+    top: 300px;
+    left: 254px;
     z-index: 9999;
     opacity: 0;
     transform: scale(0);
+
 }
 
 .star2{
@@ -251,8 +251,8 @@ line-height: normal;
 .click{
     z-index: 9999;
     position: absolute;
-    bottom: -22px;
-    right: 177px;
+    bottom: -51px;
+    right: 0;
     opacity: 0;
     transform: scale(0);
 }
@@ -853,6 +853,7 @@ main{
 }
 .herotxt , .heroimg{
     width: 100%;
+    align-items: center;
 }
 .dectext{
             scale: 0.75;
@@ -861,10 +862,12 @@ main{
 .herotxt p{
         font-size: 20.865px;
     line-height: 27.41px;
+    text-align: center;
     margin-top: -36px;
 }
 .ill{
     scale: 0.9;
+    left: -28px;
 }
 @keyframes scale {
     0%{
@@ -873,13 +876,13 @@ main{
     }
     100%{
         opacity: 1;
-        transform: scale(0.7) rotate(0);
+        transform: scale(0.9) rotate(0);
     }
     
 }
 .image{
         position: relative;
-    left: -56px;
+    left: 36px;
 }
 .star {
     top: 98px;
@@ -890,9 +893,9 @@ main{
     right: 57px;
 }
 .about{
-        padding: 44px 25px;
+    padding: 60px 25px 593px 25px;
     flex-direction: column;
-    height: 105vh;
+    gap: 30px;
 }
 main{
     gap: 80px;
@@ -901,12 +904,26 @@ main{
     width: 100%;
     align-items: center;
     text-align: center;
+    gap: 40px;
+}
+.herotxt span {
+    color: #2F91F8;
+    font-family: Outfit;
+    font-size: 142.369px;
+    font-style: normal;
+    font-weight: 600;
+    text-align: center;
+    line-height: 121.369px;
+    letter-spacing: -0.711px;
 }
     .abtimg {
-                width: 100%;
-        scale: 0.65;
-        left: 50px;
-        margin-top: -17px;
+        width: 100%;
+        scale: 1;
+    }
+    .click {
+        z-index: 9999;
+        position: absolute;
+        bottom: -68px;
     }
 .hight{
     font-size: 35vw;        margin-top: -60px;
